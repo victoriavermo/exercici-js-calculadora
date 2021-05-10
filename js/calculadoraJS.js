@@ -9,22 +9,23 @@ var num1;
 var num2;
 var operand; 
 var error = false;
+var nextDigit = false;
 
-function calculadora(operand,num1,num2){
+function result(){
 
     var result;
 
     switch (operand){
-        case 'add':
+        case '+':
             result = num1+num2;
             break;
-        case 'substract': 
+        case '-': 
             result = num1-num2;   
             break;
-        case 'multiply': 
+        case '*': 
             result = num1*num2;
             break;
-        case 'divide':
+        case '/':
             error = num2 != 0 ? false : true;
             result = !error ? num1/num2 : null;
 
@@ -32,10 +33,43 @@ function calculadora(operand,num1,num2){
     }
 
     if(!error){
-      console.log(num1+' - '+num2+' = '+result);  
+      console.log(num1+operand+num2+' = '+result);  
     }else{
         console.log('Error: '+num1+'/'+num2);
     }
+
+    resetCalc();
     
+}
+
+function addDigit(num){
     
+    if(!num1){
+        num1 = num;
+    }else{
+        if(!nextDigit){
+            num1 = num1*10 + num;
+        }else{
+            if(!num2){
+                num2 = num; 
+            }else{
+                num2 = num2*10 +1; 
+            }
+        }
+    }
+
+
+}
+
+function addOperand(type){
+    operand = type;
+    nextDigit = true;
+}
+
+function resetCalc(){
+    operand = null;
+    num1 = null;
+    num2 = null;
+    error = false;
+    nextDigit = false;
 }
