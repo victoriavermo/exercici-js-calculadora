@@ -12,8 +12,8 @@ button, input {
 
 
 #pantalla{
-  padding: 10px 41px;
   border: 1px solid grey;
+  cursor: default;
 }
 
 .operand{
