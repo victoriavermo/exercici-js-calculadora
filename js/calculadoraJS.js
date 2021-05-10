@@ -1,15 +1,9 @@
-/*Operands:
-    1 -> +
-    2 -> -
-    3 -> *
-    4 -> /
-*/
-
 var num1;
 var num2;
 var operand; 
 var error = false;
 var nextDigit = false;
+var decimal = false;
 
 function result(){
 
@@ -43,27 +37,55 @@ function result(){
 }
 
 function addDigit(num){
-    
-    if(!num1){
-        num1 = num;
-    }else{
-        if(!nextDigit){
-            num1 = num1*10 + num;
+
+    if(!decimal){
+
+        if(!num1){
+            num1 = num;
         }else{
-            if(!num2){
-                num2 = num; 
+            if(!nextDigit){
+                num1 = num1*10 + num;
             }else{
-                num2 = num2*10 +1; 
+                if(!num2){
+                    num2 = num; 
+                }else{
+                    num2 = num2*10 +1; 
+                }
             }
         }
+
+    }else{
+        if(!num1){
+            num1 = 0;
+            num1 = num1 + num*0.1;
+        }else{
+            if(!nextDigit){
+                num1 = num1 + num*0.1;
+            }else{
+                if(!num2){
+                    num2 = 0;
+                    num2 = num2 + num*0.1; 
+                }else{
+                    num2 = num2 + num*0.1;
+                }
+            }
+        }
+        
     }
+    
+    
 
 
+}
+
+function addDecimal(){
+   decimal = true;
 }
 
 function addOperand(type){
     operand = type;
     nextDigit = true;
+    decimal = false;
 }
 
 function resetCalc(){
