@@ -33,6 +33,8 @@ function calculadora(operand,num1,num2){
 
     if(!error){
       console.log(num1+' - '+num2+' = '+result);  
+    }else{
+        console.log('Error: '+num1+'/'+num2);
     }
     
     
