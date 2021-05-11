@@ -1,3 +1,7 @@
+:root {
+  font-family: Helvetica, Arial, sans-serif;
+}
+
 button, input {
     margin: 20px 0 0 10px;
     padding: 10px 20px;
@@ -14,9 +18,12 @@ button, input {
 #pantalla{
   border: 1px solid grey;
   cursor: default;
+  margin-left: 0;
+  margin: 0 auto;
+  
 }
 
-.operand{
+.operand, .result{
   width: 53px;
   height: 42px;
   border: none;
@@ -24,34 +31,31 @@ button, input {
 }
 
 .result{
-  margin: 20px 0 0 10px;
-  /* padding: 10px 54px; */
-  border: none;
-  background-color: lightblue;
+  /*margin: 20px 0 0 10px;
+   padding: 10px 54px; 
+  border: none;*/
+  background-color: rgb(130, 186, 204);
 }
 
 .esborra{
-  width: 50px;
+  
   text-align: center;
   padding: 10px 0;
 }
 
 .botons-grid {
+  display: grid;
+  grid-gap: 1px;
   grid-template-columns: repeat(4, 1fr);
-  grid-row-gap: 20px;
-  grid-column-gap: 20px;
 }
-
-body{
-  /* background: black;
-  color: white; */
-  font-family: monospace;
-} 
+body {
+  align-items: center;
+}  
 
 .container{
   display: grid;
   margin: 0 auto;
-  width: 0%;
+  max-width: 20em;
 }
 
 h1{
