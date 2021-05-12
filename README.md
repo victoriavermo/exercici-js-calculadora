@@ -1,4 +1,4 @@
-# exercici-js-calculadora
+# CalculadoraJS
 
 ## Description
 
