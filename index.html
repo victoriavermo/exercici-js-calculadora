@@ -5,9 +5,51 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calculadora</title>
-    <script src="js/calculadoraJS.js"></script>
+    <link rel="stylesheet" href="css/style.css"> 
 </head>
 <body>
-    
+
+    <h1>Calculadora</h1>
+
+    <div class="container">
+      
+            
+                <input type="text" id="pantalla" readonly="readonly">
+            
+            <div>
+
+                <div  class="botons-grid">
+                    <button type="button" onclick="addDigit(1)">1</button>
+                    <button type="button" onclick="addDigit(2)">2</button>
+                    <button type="button" onclick="addDigit(3)">3</button>
+                    <button type="button" class="operand" onclick="addOperand('+')">+</button>
+                </div>
+                
+                <div  class="botons-grid">
+                    <button type="button" onclick="addDigit(4)">4</button>
+                    <button type="button" onclick="addDigit(5)">5</button>
+                    <button type="button" onclick="addDigit(6)">6</button>
+                    <button type="button" class="operand" onclick="addOperand('-')">-</button>
+                </div>
+
+                <div  class="botons-grid">
+                    <button type="button" onclick="addDigit(7)">8</button>
+                    <button type="button" onclick="addDigit(9)">9</button>
+                    <button type="button" onclick="addDigit(0)">0</button>
+                    <button type="button" class="operand" onclick="addOperand('*')">*</button>
+                </div>
+
+                <div  class="botons-grid">
+                    <button type="button" onclick="addOperand('/')">/</button>
+                    <button type="button" onclick="addDecimal()">.</button>
+                    <button type="button" class="esborra" onclick="resetPantalla()">AC</button>
+                    <button type="button" class="result" onclick="result()">=</button>
+                </div>
+
+    </div>
+
+    <!-- <button onclick="calculadora('divide',5,0)">Calcula</button> -->
+
+    <script src="js/calculadoraJS.js"></script>
 </body>
 </html>
